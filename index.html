@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026年8月餐厅月刊 | August 2026 Restaurant Monthly</title>
+<style>
+  :root {
+    --primary: #1a365d;
+    --accent: #c9a227;
+    --bg: #f7fafc;
+    --card: #ffffff;
+    --text: #2d3748;
+    --muted: #718096;
+    --border: #e2e8f0;
+    --danger: #c53030;
+    --success: #276749;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 20px; }
+  
+  /* Cover */
+  .cover {
+    background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+    color: white;
+    padding: 60px 40px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(26,54,93,0.25);
+  }
+  .cover h1 { font-size: 2.4rem; letter-spacing: 2px; margin-bottom: 8px; }
+  .cover .en { font-size: 1.3rem; opacity: 0.9; font-weight: 300; margin-bottom: 24px; }
+  .cover .meta { font-size: 0.95rem; opacity: 0.85; }
+  .cover .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #1a365d;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 20px;
+  }
+
+  /* Section headers */
+  .section-title {
+    background: var(--primary);
+    color: white;
+    padding: 14px 24px;
+    border-radius: 8px;
+    margin: 40px 0 20px;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .section-title .en { font-size: 0.95rem; font-weight: 400; opacity: 0.9; }
+
+  /* Notice boxes */
+  .notice {
+    background: #fff5f5;
+    border-left: 5px solid var(--danger);
+    padding: 18px 22px;
+    margin-bottom: 16px;
+    border-radius: 0 8px 8px 0;
+  }
+  .notice.warning {
+    background: #fffaf0;
+    border-left-color: #dd6b20;
+  }
+  .notice.info {
+    background: #ebf8ff;
+    border-left-color: #3182ce;
+  }
+  .notice h3 { color: var(--danger); margin-bottom: 8px; font-size: 1.05rem; }
+  .notice.warning h3 { color: #c05621; }
+  .notice.info h3 { color: #2b6cb0; }
+  .notice ul { padding-left: 20px; }
+  .notice li { margin: 4px 0; }
+
+  /* Restaurant card */
+  .resto {
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    margin-bottom: 36px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    page-break-inside: avoid;
+  }
+  .resto-header {
+    background: linear-gradient(90deg, #1a365d, #2a4365);
+    color: white;
+    padding: 22px 28px;
+  }
+  .resto-header h2 { font-size: 1.45rem; margin-bottom: 4px; }
+  .resto-header .en-name { font-size: 1.05rem; opacity: 0.9; font-weight: 400; }
+  .resto-header .location { font-size: 0.9rem; margin-top: 10px; opacity: 0.85; }
+  .resto-body { padding: 24px 28px; }
+  
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+  }
+  .info-grid dt { color: var(--muted); font-size: 0.85rem; }
+  .info-grid dd { font-weight: 500; }
+
+  .menu-block {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+  }
+  .menu-block h4 {
+    color: var(--primary);
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .price-tag {
+    background: var(--accent);
+    color: #1a365d;
+    padding: 3px 12px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+  .menu-block ul { list-style: none; padding: 0; }
+  .menu-block li {
+    padding: 5px 0;
+    border-bottom: 1px dashed #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .menu-block li:last-child { border-bottom: none; }
+  .dish-cn { font-weight: 500; }
+  .dish-en { color: var(--muted); font-size: 0.9rem; }
+
+  .note {
+    background: #edf2f7;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-top: 12px;
+  }
+  .highlight {
+    background: #f0fff4;
+    border: 1px solid #9ae6b4;
+    color: var(--success);
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-weight: 500;
+    margin: 12px 0;
+  }
+
+  /* Restaurant images */
+  .resto-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    background: #e2e8f0;
+  }
+  .resto-img-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .resto-img-row img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+  }
+  @media (max-width: 640px) {
+    .resto-img-row { grid-template-columns: 1fr; }
+    .resto-img-row img { height: 180px; }
+  }
+
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+  }
+
+  @media print {
+    body { background: white; }
+    .container { max-width: 100%; padding: 0; }
+    .resto { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+    .cover { page-break-after: always; }
+  }
+  @media (max-width: 640px) {
+    .info-grid { grid-template-columns: 1fr; }
+    .cover h1 { font-size: 1.8rem; }
+    .resto-header, .resto-body { padding: 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="badge">内部资料 · Internal Use</div>
+    <h1>2026年8月餐厅月刊</h1>
+    <div class="en">August 2026 Restaurant Monthly</div>
+    <div class="meta">
+      远海国际 Hiseas Travel Agency<br>
+      发布日期：2026年8月17日 | Published: 17 August 2026
+    </div>
+  </div>
+
+  <!-- IMPORTANT NOTICES -->
+  <div class="section-title">
+    <span>重要通知 · Important Notices</span>
+  </div>
+
+  <div class="notice">
+    <h3>⛔ 永久关门 · Permanently Closed (英国 UK)</h3>
+    <p>以下餐厅已永久关闭，以后不可再选：</p>
+    <ul>
+      <li>Las Iguanas Leeds</li>
+      <li>Las Iguanas Royal Festival Hall</li>
+      <li>Las Iguanas York</li>
+      <li>Las Iguanas Glasgow</li>
+      <li>Las Iguanas Edinburgh</li>
+    </ul>
+  </div>
+
+  <div class="notice warning">
+    <h3>⚠️ 临时停业 / 营业调整 · Temporary Closures & Changes</h3>
+    <ul>
+      <li><strong>Kimroof (罗马 Rome)</strong>：8月20–31日不营业，9月1日起恢复营业。<br>
+        <em>Closed 20–31 Aug, reopens from 1 Sep.</em></li>
+      <li><strong>Akakiko | Sushi & Asian Fusion</strong> (Rotenturmstraße 6, 1010 Wien, Austria)：休假1个月（结束日期未知，建议9月再问询）。<br>
+        <em>On leave for 1 month (end date unknown – check again in September).</em></li>
+      <li><strong>Seoul Restaurant</strong> (Leopoldstraße 120, 80802 München, Germany)：休假至8月31日。<br>
+        <em>On leave until 31 August.</em></li>
+      <li><strong>Restaurant le Dézaley</strong> (Römergasse 7-9, 8001 Zürich)：9月16日–12月31日期间仅接待团队午餐，每周日固定关门。<br>
+        <em>16 Sep – 31 Dec: group lunch only; closed every Sunday.</em></li>
+    </ul>
+  </div>
+
+  <!-- UPDATE: WARSAW -->
+  <div class="section-title">
+    <span>餐厅更新 · Restaurant Update</span>
+  </div>
+
+  <div class="resto">
+    <div class="resto-header">
+      <h2>御龙宴</h2>
+      <div class="en-name">Restauracja Cesarski Smok (原 Canton 餐厅更换老板)</div>
+      <div class="location">📍 UL. SMOCZA 1, 01-012 WARSZAWA, Poland</div>
+    </div>
+    <img class="resto-img" src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=900&h=400&fit=crop" alt="Chinese restaurant interior">
+    <div class="resto-img-row">
+      <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?w=500&h=300&fit=crop" alt="Chinese dishes">
+      <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=500&h=300&fit=crop" alt="Asian food">
+    </div>
+    <div class="resto-body">
+      <div class="highlight">✅ 新老板接手，餐厅名称已更新为「御龙宴 / Cesarski Smok」。菜单更新如下。</div>
+      
+      <div class="menu-block">
+        <h4>6菜1汤套餐 <span class="price-tag">€13 / 位</span></h4>
+        <ul>
+          <li><span class="dish-cn">1. 鱼（波兰鲟）</span> <span class="dish-en">Polish Sturgeon</span></li>
+          <li><span class="dish-cn">2. 鸡翅</span> <span class="dish-en">Chicken Wings</span></li>
+          <li><span class="dish-cn">3. 咕咾肉</span> <span class="dish-en">Sweet & Sour Pork</span></li>
+          <li><span class="dish-cn">4. 番茄炒蛋</span> <span class="dish-en">Tomato Scrambled Eggs</span></li>
+          <li><span class="dish-cn">5. 青菜</span> <span class="dish-en">Greens</span></li>
+          <li><span class="dish-cn">6. 肉丸</span> <span class="dish-en">Meatballs</span></li>
+          <li><span class="dish-cn">7. 蛋花汤</span> <span class="dish-en">Egg Drop Soup</span></li>
+        </ul>
+        <div class="note">含：水果 + 米饭 + 茶 · Includes: Fruit + Rice + Tea</div>
+      </div>
+
+      <div class="menu-block">
+        <h4>6菜1汤套餐 <span class="price-tag">€15 / 位</span></h4>
+        <ul>
+          <li><span class="dish-cn">1. 鲈鱼</span> <span class="dish-en">Sea Bass</span></li>
+          <li><span class="dish-cn">2. 大虾</span> <span class="dish-en">Prawns</span></li>
+          <li><span class="dish-cn">3. 牛肉</span> <span class="dish-en">Beef</span></li>
+          <li><span class="dish-cn">4. 肉丸</span> <span class="dish-en">Meatballs</span></li>
+          <li><span class="dish-cn">5. 鸡肉</span> <span class="dish-en">Chicken</span></li>
+          <li><span class="dish-cn">6. 时蔬</span> <span class="dish-en">Seasonal Vegetables</span></li>
+          <li><span class="dish-cn">7. 汤</span> <span class="dish-en">Soup</span></li>
+        </ul>
+        <div class="note">含：水果 + 米饭 + 茶 · Includes: Fruit + Rice + Tea</div>
+      </div>
+
+      <div class="menu-block">
+        <h4>6菜1汤套餐 <span class="price-tag">€18 / 位</span></h4>
+        <ul>
+          <li><span class="dish-cn">1. 一条鱼</span> <span class="dish-en">Whole Fish</span></li>
+          <li><span class="dish-cn">2. 大虾</span> <span class="dish-en">Prawns</span></li>
+          <li><span class="dish-cn">3. 鱿鱼</span> <span class="dish-en">Squid</span></li>
+          <li><span class="dish-cn">4. 鸭肉</span> <span class="dish-en">Duck</span></li>
+          <li><span class="dish-cn">5. 鸡肉 / 猪肉</span> <span class="dish-en">Chicken / Pork</span></li>
+          <li><span class="dish-cn">6. 时蔬</span> <span class="dish-en">Seasonal Vegetables</span></li>
+          <li><span class="dish-cn">7. 汤</span> <span class="dish-en">Soup</span></li>
+        </ul>
+        <div class="note">含：水果 + 米饭 + 茶 · Includes: Fruit + Rice + Tea</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECOMMENDED RESTAURANTS -->
+  <div class="section-title">
+    <span>本月推荐餐厅 · Recommended Restaurants</span>
+  </div>
+
+  <!-- 1. Florence -->
+  <div class="resto">
+    <div class="resto-header">
+      <h2>团圆餐馆 · Amor 团圆</h2>
+      <div class="en-name">Amor Tuanyuan – Authentic Chinese Cuisine</div>
+      <div class="location">📍 Via Pratese 100, Firenze, Italy &nbsp;|&nbsp; Tel: +39 055 288951</div>
+    </div>
+    <img class="resto-img" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&h=400&fit=crop" alt="Restaurant interior">
+    <div class="resto-img-row">
+      <img src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=500&h=300&fit=crop" alt="Chinese food">
+      <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=500&h=300&fit=crop&q=80" alt="Stir fry dishes">
+    </div>
+    <div class="resto-body">
+      <div class="info-grid">
+        <div><dt>菜系 Cuisine</dt><dd>中式传统 Chinese Traditional</dd></div>
+        <div><dt>城市 City</dt><dd>佛罗伦萨 Florence, Italy</dd></div>
+      </div>
+
+      <div class="menu-block">
+        <h4>套餐 Menu A <span class="price-tag">€12 / 位</span></h4>
+        <ul>
+          <li><span class="dish-cn">玉米鸡丝汤</span> <span class="dish-en">Corn and Shredded Chicken Soup</span></li>
+          <li><span class="dish-cn">江雪小排</span> <span class="dish-en">Sweet and Sour Pork Ribs</span></li>
+          <li><span class="dish-cn">红烧鱼</span> <span class="dish-en">Braised Fish in Brown Sauce</span></li>
+          <li><span class="dish-cn">宫保鸡丁</span> <span class="dish-en">Kung Pao Chicken</span></li>
+          <li><span class="dish-cn">海鲜豆腐煲</span> <span class="dish-en">Seafood Tofu Pot</span></li>
+          <li><span class="dish-cn">鱼香茄子</span> <span class="dish-en">Yu-Shiang Eggplant (Sichuan Style)</span></li>
+          <li><span class="dish-cn">口蘑炒时蔬</span> <span class="dish-en">Sautéed Seasonal Vegetables with Mushrooms</span></li>
+        </ul>
+        <div class="note">含：米饭 + 茶 + 水果 · Includes: Rice + Tea + Fruit</div>
+      </div>
+
+      <div class="menu-block">
+        <h4>套餐 Menu B <span class="price-tag">€16 / 位</span></h4>
+        <ul>
+          <li><span class="dish-cn">西湖牛肉羹</span> <span class="dish-en">West Lake Beef Soup</span></li>
+          <li><span class="dish-cn">红烧鱼</span> <span class="dish-en">Braised Fish in Brown Sauce</span></li>
+          <li><span class="dish-cn">葱香大排</span> <span class="dish-en">Scallion Pork Chop</span></li>
+          <li><span class="dish-cn">黑椒牛柳</span> <span class="dish-en">Black Pepper Beef Tenderloin</span></li>
+          <li><span class="dish-cn">红烧花甲</span> <span class="dish-en">Braised Clams in Brown Sauce</span></li>
+          <li><span class="dish-cn">咖喱鸡腿肉</span> <span class="dish-en">Curry Chicken Thigh</span></li>
+          <li><span class="dish-cn">锦绣田园</span> <span class="dish-en">Sautéed Mixed Vegetables</span></li>
+          <li><span class="dish-cn">肉末茄子</span> <span class="dish-en">Minced Meat with Eggplant</span></li>
+          <li><span class="dish-cn">麻婆豆腐</span> <span class="dish-en">Mapo Tofu</span></li>
+        </ul>
+        <div class="note">含：米饭 + 茶 + 水果 · Includes: Rice + Tea + Fruit</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Moki Rome -->
+  <div class="resto">
+    <div class="resto-header">
+      <h2>Moki Japanese Restaurant</h2>
+      <div class="en-name">Moki Sushi – All You Can Eat</div>
+      <div class="location">📍 Via Emanuele Filiberto 197, Rome, Italy &nbsp;|&nbsp; Tel: +39 06 3105 1048</div>
+    </div>
+    <div class="img-placeholder japanese">日式自助 · Japanese Buffet in Rome</div>
+    <div class="resto-body">
+      <div class="info-grid">
+        <div><dt>菜系 Cuisine</dt><dd>日式 / 寿司 Japanese / Sushi</dd></div>
+        <div><dt>城市 City</dt><dd>罗马 Rome, Italy</dd></div>
+      </div>
+      <div class="menu-block">
+        <h4>午餐 & 晚餐自助 Buffet <span class="price-tag">€19.90</span></h4>
+        <p style="margin-top:8px;">午餐 & 晚餐自助（含水）<br>
+        <em>Lunch & Dinner Buffet with water included</em></p>
+        <div class="note">All You Can Eat 形式，适合团队快速用餐。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Kelly's Wok Budapest -->
+  <div class="resto">
+    <div class="resto-header">
+      <h2>Kelly’s Wok</h2>
+      <div class="en-name">Best Coffee & Food Kelly’s Wok</div>
+      <div class="location">📍 Budapest, Károly krt. 16, 1052 Hungary &nbsp;|&nbsp; Tel: +36 1 952 0658</div>
+    </div>
+    <div class="img-placeholder asian">布达佩斯自助 · Asian Buffet in Budapest</div>
+    <div class="resto-body">
+      <div class="info-grid">
+        <div><dt>菜系 Cuisine</dt><dd>中式 / 亚洲 Chinese / Asian</dd></div>
+        <div><dt>城市 City</dt><dd>布达佩斯 Budapest, Hungary</dd></div>
+        <div><dt>营业时间 Hours</dt><dd>周一至周日 午餐 & 晚餐<br>Mon–Sun Lunch & Dinner</dd></div>
+        <div><dt>价格 Price</dt><dd><strong>€18</strong>（统一价格）</dd></div>
+      </div>
+      <div class="highlight">新推荐自助餐厅 · New recommended buffet restaurant. 午餐晚餐统一价格 €18。</div>
+      <div class="note">自助形式，适合团队。位置便利（靠近 Astoria）。</div>
+    </div>
+  </div>
+
+  <!-- 4. Babida Vienna -->
+  <div class="resto">
+    <div class="resto-header">
+      <h2>Babida Restaurant</h2>
+      <div class="en-name">Babida – Korean Restaurant (Akakiko 替代选择)</div>
+      <div class="location">📍 Franz-Josefs-Kai 29, 1010 Wien, Austria &nbsp;|&nbsp; Tel: +43 1 532 2852</div>
+    </div>
+    <div class="img-placeholder korean">维也纳韩餐 · Korean Cuisine in Vienna</div>
+    <div class="resto-body">
+      <div class="info-grid">
+        <div><dt>菜系 Cuisine</dt><dd>韩式 Korean</dd></div>
+        <div><dt>城市 City</dt><dd>维也纳 Vienna, Austria</dd></div>
+        <div><dt>价格 Price</dt><dd><strong>€14</strong></dd></div>
+        <div><dt>特别注意 Note</dt><dd style="color:var(--danger); font-weight:600;">必须现付 · Cash payment only</dd></div>
+      </div>
+      <div class="menu-block">
+        <h4>套餐内容 Menu Includes</h4>
+        <ul>
+          <li><span class="dish-cn">Bibimbap</span> <span class="dish-en">石锅拌饭</span></li>
+          <li><span class="dish-cn">Bulgogi</span> <span class="dish-en">韩式烤肉</span></li>
+          <li><span class="dish-cn">Ssam (Salat)</span> <span class="dish-en">包饭 / 沙拉</span></li>
+          <li><span class="dish-cn">3 Dishes</span> <span class="dish-en">三道小菜</span></li>
+          <li><span class="dish-cn">Miso Soup</span> <span class="dish-en">味噌汤</span></li>
+          <li><span class="dish-cn">Barley Tea</span> <span class="dish-en">大麦茶</span></li>
+        </ul>
+      </div>
+      <div class="highlight">Akakiko 休假期间的推荐替代餐厅。请提醒客人现场现金支付。</div>
+    </div>
+  </div>
+
+  <!-- 5. Isst Balance Freiburg -->
+  <div class="resto">
+    <div class="resto-header">
+      <h2>Isst Balance Freiburg</h2>
+      <div class="en-name">Isst Balance – Chinese / Asian Community Kitchen</div>
+      <div class="location">📍 Grünwälderstraße 14, 79098 Freiburg im Breisgau, Germany &nbsp;|&nbsp; Tel: +49 761 4575 0178</div>
+    </div>
+    <div class="img-placeholder chinese">弗莱堡中餐厅 · Chinese Restaurant in Freiburg</div>
+    <div class="resto-body">
+      <div class="info-grid">
+        <div><dt>菜系 Cuisine</dt><dd>中式 / 亚洲 Chinese / Asian</dd></div>
+        <div><dt>城市 City</dt><dd>弗莱堡 Freiburg, Germany</dd></div>
+        <div><dt>价格 Price</dt><dd><strong>€20</strong></dd></div>
+        <div><dt>特色 Feature</dt><dd>健康平衡理念 · Healthy Balance Concept</dd></div>
+      </div>
+      <div class="menu-block">
+        <h4>推荐套餐内容 Recommended Dishes</h4>
+        <ul>
+          <li><span class="dish-cn">红烧肉</span> <span class="dish-en">Braised Pork</span></li>
+          <li><span class="dish-cn">啤酒鸭</span> <span class="dish-en">Beer Duck</span></li>
+          <li><span class="dish-cn">柠檬鸡爪</span> <span class="dish-en">Lemon Chicken Feet</span></li>
+          <li><span class="dish-cn">清蒸鱼</span> <span class="dish-en">Steamed Fish</span></li>
+          <li><span class="dish-cn">沙拉拼盘</span> <span class="dish-en">Salad Platter</span></li>
+          <li><span class="dish-cn">蒜蓉黄瓜</span> <span class="dish-en">Garlic Cucumber</span></li>
+          <li><span class="dish-cn">红烧豆腐</span> <span class="dish-en">Braised Tofu</span></li>
+          <li><span class="dish-cn">番茄蛋花汤</span> <span class="dish-en">Tomato Egg Drop Soup</span></li>
+        </ul>
+        <div class="note">含：大壶泡红茶 + 米饭 · Includes: Large pot of black tea + Rice</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>2026年8月餐厅月刊</strong> · August 2026 Restaurant Monthly</p>
+    <p>远海国际 Hiseas Travel Agency · 内部使用 For Internal Use Only</p>
+    <p style="margin-top:12px; font-size:0.85rem;">
+      信息收集截止：2026年8月 · 图片为示意风格，实际以餐厅实景为准<br>
+      Information collected as of August 2026 · Images are illustrative; please refer to actual restaurant photos<br>
+      如有最新变动请及时更新本月刊 · Please update this monthly if there are any latest changes
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
